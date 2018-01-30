@@ -12,7 +12,9 @@ RUN pip install --upgrade awscli pip python-dateutil
 
 RUN apk add --update php7@php php7-bcmath@php php7-ctype@php php7-curl@php php7-dom@php php7-gd@php php7-imagick@php php7-intl@php php7-mbstring@php php7-mcrypt@php php7-openssl@php php7-pdo@php php7-pdo_mysql@php php7-xml@php php7-soap@php php7-xsl@php php7-zip@php php7-json@php php7-iconv@php
 
+RUN ln -s /usr/bin/php7 /usr/bin/php
+
 RUN curl -sS https://getcomposer.org/installer | php
-RUN mv composer.phar /usr/local/bin/composer
+RUN mv composer.phar /usr/bin/composer
 
 CMD ["/bin/bash", "--login"]
