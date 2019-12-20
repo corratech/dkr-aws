@@ -12,4 +12,8 @@ RUN ln -s /usr/bin/php7 /usr/bin/php
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/bin/composer
 
+COPY files/fix_glob_brace.php /etc/
+COPY files/php.ini /etc/
+
+
 CMD ["/bin/bash", "--login"]
